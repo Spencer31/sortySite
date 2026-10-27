@@ -142,9 +142,10 @@ footer { padding-block: 2.5rem; font-size: .8rem; }.footer-brand { font-size: 1r
 .support-card:hover { background: var(--yellow); }.support-card h2 { margin: 0 0 .5rem; }
 .faq details { border-top: 1.5px solid var(--ink); padding: 1.25rem 0; }.faq details:last-child { border-bottom: 1.5px solid var(--ink); }.faq summary { cursor: pointer; font-weight: 900; }
 
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
+.reveal { opacity: 1; transform: translateY(0); }
+.reveal.reveal-pending { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.reveal-pending.visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } .reveal, .reveal.reveal-pending { opacity: 1; transform: none; } }
 @media (max-width: 800px) {
     nav a:not(.nav-cta) { display: none; }
     .hero, .variety-card, .story-heading, .pack-shelf-heading { grid-template-columns: 1fr; }

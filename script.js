@@ -1,6 +1,8 @@
 const reveals = document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {
+    reveals.forEach((element) => element.classList.add('reveal-pending'));
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
